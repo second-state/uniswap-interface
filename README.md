@@ -63,3 +63,41 @@ CI checks will run against all PRs.
 The Uniswap Interface supports swapping against, and migrating or removing liquidity from Uniswap V1. However,
 if you would like to use Uniswap V1, the Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways 
 linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
+
+## Changes required for V1 interface deployment on Oasis Demo
+Remove the `MigrateBannerSmall`, `MigrateBannerLarge`, `VersionToggle` and `TestnetWrapper` from the `src/components/Header/index.js` file.
+Change the URL of Uniswap endpoint from default to `http://uniswap.oasiseth.org`, also in the `src/components/Header/index.js` file.
+Update the `getEtherscanLink` function in the `src/utils/index.js` file to look like the following
+```
+export function getEtherscanLink(networkId, data, type) {
+    console.log(networkId);
+    const prefix = "http://52.237.119.138:4000"
+    switch (type) {
+        case 'transaction': {
+            return `${prefix}/tx/${data}`
+        }
+        case 'address':
+        default: {
+            return `${prefix}/account/${data}`
+        }
+    }
+}
+```
+Alter the `src/contexts/Tokens.js` page to remove Ethereum mainnet tokens and then add Oasis demo tokens i.e. add token address and V1 exchange address.
+```
+export const INITIAL_TOKENS_CONTEXT = {
+        1: {
+            '0x984718904f853A004F145d133dEAb0c1dE50466B': {
+                [NAME]: 'Alice Token',
+                [SYMBOL]: 'ALICE',
+                [DECIMALS]: 18,
+                [EXCHANGE_ADDRESS]: '0x5AeC86734172C5C257Eb2a86e705EF375207c5c8'
+            },
+            '0x61950E81019caDC560036125B262EF0CAa705896': {
+                [NAME]: 'Bob Token',
+                [SYMBOL]: 'BOB',
+                [DECIMALS]: 18,
+                [EXCHANGE_ADDRESS]: '0x92570E6E10fa2196952B039c4A59b5e617Eb9A50'
+            }
+        }
+```
