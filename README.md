@@ -66,8 +66,11 @@ linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/re
 
 ## Changes required for V1 interface deployment on Oasis Demo
 Remove the `MigrateBannerSmall`, `MigrateBannerLarge`, `VersionToggle` and `TestnetWrapper` from the `src/components/Header/index.js` file.
+
 Change the URL of Uniswap endpoint from default to `http://uniswap.oasiseth.org`, also in the `src/components/Header/index.js` file.
+
 Update the `getEtherscanLink` function in the `src/utils/index.js` file to look like the following
+
 ```
 export function getEtherscanLink(networkId, data, type) {
     console.log(networkId);
@@ -83,7 +86,9 @@ export function getEtherscanLink(networkId, data, type) {
     }
 }
 ```
+
 Alter the `src/contexts/Tokens.js` page to remove Ethereum mainnet tokens and then add Oasis demo tokens i.e. add token address and V1 exchange address.
+
 ```
 export const INITIAL_TOKENS_CONTEXT = {
         1: {
