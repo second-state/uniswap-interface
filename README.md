@@ -268,3 +268,5 @@ Now, we return to the Uniswap directory to copy the modified `build` files over 
 cd ../../ && sudo cp -rp build/* /var/www/html/ && sudo /etc/init.d/apache2 restart
 ```
 ---
+
+A demo of the above installation can be found at [http://uniswap.oasiseth.org/](http://uniswap.oasiseth.org/)
