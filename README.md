@@ -13,7 +13,7 @@ Some [Ethereum](https://ethereum.org/en/) compatible blockchains include:
 * [Ethereum Classic](https://ethereumclassic.org/) - Ethereum (ETH) blockchain network initially released on 30 July 2015, now known as Ethereum Classic (ETC).
 
 ## Uniswap V1
-[Uniswap V1](https://uniswap.org/docs/v1/), was [launched in November 2018](https://twitter.com/haydenzadams/status/1058376395108376577) on the Ethereum mainnet as a set of 2 [Vyper](https://vyper.readthedocs.io/en/stable/) smart contracts. Uniswap is an automated liquidity protocol which facilitates token exchanges on the Ethereum blockchain network. Uniswap has seen daily trading volumes of well beyond four hundred million dollars ($400, 000, 000 / day). 
+[Uniswap V1](https://uniswap.org/docs/v1/), was [launched in November 2018](https://twitter.com/haydenzadams/status/1058376395108376577) on the Ethereum mainnet as a pair of [Vyper](https://vyper.readthedocs.io/en/stable/) smart contracts. Uniswap is an automated liquidity protocol which facilitates token exchanges on the Ethereum blockchain network. Uniswap has seen daily trading volumes of well beyond four hundred million dollars ($400, 000, 000 / day). 
 
 [This tweet](https://twitter.com/haydenzadams/status/1300034164830408704) shows that Uniswap surpasses the daily Coinbase trade volume on occasion.
 
@@ -228,6 +228,7 @@ python3.6 change_rpc.py
 ```
 
 ### Build
+
 Change back to the following directory
 ```
 cd ~/uniswap-interface
@@ -267,4 +268,3 @@ Now, we return to the Uniswap directory to copy the modified `build` files over 
 cd ../../ && sudo cp -rp build/* /var/www/html/ && sudo /etc/init.d/apache2 restart
 ```
 ---
-
