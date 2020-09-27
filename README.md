@@ -234,6 +234,12 @@ Change back to the following directory
 ```
 cd ~/uniswap-interface
 ```
+
+Change the `homepage` value in the package.json file to suit your Uniswap deployment's endpoint i.e.
+```
+"homepage": "https://uniswap-testnet.oasiseth.org"
+```
+
 Now run the following command
 ```
 yarn run build
