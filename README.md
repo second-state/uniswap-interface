@@ -184,8 +184,9 @@ export const INITIAL_TOKENS_CONTEXT = {
         }
 ```
 
-Build the application's dependencies using the following command.
+Return to the Uniswap Interface directory and then build the application's dependencies.
 ```
+cd ~/uniswap-interface
 yarn
 ```
 
